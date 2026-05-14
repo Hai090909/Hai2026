@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shoply — Modern Store</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="logo" href="#">Shoply</a>
+
+            <nav class="main-nav" aria-label="Primary">
+                <ul class="nav-list">
+                    <li class="nav-item has-dropdown">
+                        <button type="button" class="nav-trigger" aria-expanded="false" aria-haspopup="true">Shop</button>
+                        <div class="dropdown" role="menu">
+                            <a href="#">All products</a>
+                            <a href="#">Clothing</a>
+                            <a href="#">Accessories</a>
+                            <a href="#">Electronics</a>
+                            <a href="#">Home &amp; living</a>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <button type="button" class="nav-trigger" aria-expanded="false" aria-haspopup="true">New</button>
+                        <div class="dropdown" role="menu">
+                            <a href="#">Just dropped</a>
+                            <a href="#">This week</a>
+                            <a href="#">New collections</a>
+                            <a href="#">Coming soon</a>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <button type="button" class="nav-trigger" aria-expanded="false" aria-haspopup="true">Best Sellers</button>
+                        <div class="dropdown" role="menu">
+                            <a href="#">Top rated</a>
+                            <a href="#">Most purchased</a>
+                            <a href="#">Staff picks</a>
+                            <a href="#">Trending now</a>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <button type="button" class="nav-trigger" aria-expanded="false" aria-haspopup="true">Deals</button>
+                        <div class="dropdown" role="menu">
+                            <a href="#">Clearance</a>
+                            <a href="#">Up to 50% off</a>
+                            <a href="#">Bundle deals</a>
+                            <a href="#">Flash sale</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <span class="header-sep" aria-hidden="true">|</span>
+
+            <form class="search-wrap" role="search" action="#" method="get">
+                <label class="visually-hidden" for="searchInput">Search</label>
+                <input id="searchInput" class="search-input" type="search" name="q" placeholder="Search products…" autocomplete="off" />
+                <button class="search-btn" type="submit" aria-label="Search">🔍</button>
+            </form>
+
+            <span class="header-sep" aria-hidden="true">|</span>
+
+            <div class="header-actions">
+                <button type="button" class="icon-action" aria-label="Wishlist">❤️</button>
+                <button type="button" class="icon-action cart-btn" aria-label="Shopping cart">
+                    🛒<span class="cart-count is-zero" id="cartCount">0</span>
+                </button>
+                <button type="button" class="icon-action" aria-label="Account">👤</button>
+            </div>
+
+            <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <section class="promo-banner" aria-label="Promotional banners">
+            <div class="promo-viewport">
+                <div class="promo-track">
+                    <figure class="promo-slide">
+                        <img src="https://picsum.photos/seed/shopbanner1/960/400" alt="Spring collection" width="960" height="400" loading="eager" />
+                    </figure>
+                    <figure class="promo-slide">
+                        <img src="https://picsum.photos/seed/shopbanner2/960/400" alt="Member deals" width="960" height="400" loading="lazy" />
+                    </figure>
+                    <figure class="promo-slide">
+                        <img src="https://picsum.photos/seed/shopbanner3/960/400" alt="New arrivals" width="960" height="400" loading="lazy" />
+                    </figure>
+                </div>
+            </div>
+            <div class="promo-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        </section>
+
+        <section class="products-section" aria-labelledby="productsHeading">
+            <div class="section-head">
+                <h1 id="productsHeading">Products</h1>
+                <p class="section-lead">Hover a card to reveal <strong>Add to cart</strong>.</p>
+            </div>
+            <div class="product-grid" id="productGrid">
+                <article class="product-card" data-name="Aurora backpack">
+                    <div class="product-media">
+                        <img src="https://picsum.photos/seed/prod01/600/720" alt="" width="600" height="720" loading="lazy" />
+                        <button type="button" class="add-to-cart">Add to cart</button>
+                    </div>
+                    <h2 class="product-title">Aurora backpack</h2>
+                    <p class="product-price">$89.00</p>
+                </article>
+                <article class="product-card" data-name="Lumen headphones">
+                    <div class="product-media">
+                        <img src="https://picsum.photos/seed/prod02/600/720" alt="" width="600" height="720" loading="lazy" />
+                        <button type="button" class="add-to-cart">Add to cart</button>
+                    </div>
+                    <h2 class="product-title">Lumen headphones</h2>
+                    <p class="product-price">$149.00</p>
+                </article>
+                <article class="product-card" data-name="Vertex watch">
+                    <div class="product-media">
+                        <img src="https://picsum.photos/seed/prod03/600/720" alt="" width="600" height="720" loading="lazy" />
+                        <button type="button" class="add-to-cart">Add to cart</button>
+                    </div>
+                    <h2 class="product-title">Vertex watch</h2>
+                    <p class="product-price">$199.00</p>
+                </article>
+                <article class="product-card" data-name="Nimbus lamp">
+                    <div class="product-media">
+                        <img src="https://picsum.photos/seed/prod04/600/720" alt="" width="600" height="720" loading="lazy" />
+                        <button type="button" class="add-to-cart">Add to cart</button>
+                    </div>
+                    <h2 class="product-title">Nimbus lamp</h2>
+                    <p class="product-price">$64.00</p>
+                </article>
+                <article class="product-card" data-name="Echo speaker">
+                    <div class="product-media">
+                        <img src="https://picsum.photos/seed/prod05/600/720" alt="" width="600" height="720" loading="lazy" />
+                        <button type="button" class="add-to-cart">Add to cart</button>
+                    </div>
+                    <h2 class="product-title">Echo speaker</h2>
+                    <p class="product-price">$119.00</p>
+                </article>
+                <article class="product-card" data-name="Drift bottle">
+                    <div class="product-media">
+                        <img src="https://picsum.photos/seed/prod06/600/720" alt="" width="600" height="720" loading="lazy" />
+                        <button type="button" class="add-to-cart">Add to cart</button>
+                    </div>
+                    <h2 class="product-title">Drift bottle</h2>
+                    <p class="product-price">$32.00</p>
+                </article>
+            </div>
+            <p class="search-empty hidden" id="searchEmpty" role="status">No products match your search.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <a class="footer-logo" href="#">Shoply</a>
+                <p class="footer-about">Quality essentials and curated deals. Shop with confidence.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul class="footer-list">
+                    <li><a href="mailto:hello@shoply.example">hello@shoply.example</a></li>
+                    <li><a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+                    <li>1200 Commerce Ave, Suite 400<br />Austin, TX 78701</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Customer care</h3>
+                <ul class="footer-list">
+                    <li><a href="#">Shipping &amp; returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Follow us</h3>
+                <ul class="social-list">
+                    <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="#" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="#" rel="noopener noreferrer">X (Twitter)</a></li>
+                    <li><a href="#" rel="noopener noreferrer">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Shoply. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
