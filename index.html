@@ -2,197 +2,767 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shoply — Modern Store</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aura Cosmetics — Premium skincare, makeup, and fragrance for radiant beauty.">
+  <title>Aura Cosmetics | Premium Beauty & Skincare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="header-inner">
-            <a class="logo" href="#">Shoply</a>
 
-            <nav class="main-nav" aria-label="Primary">
-                <ul class="nav-list">
-                    <li class="nav-item has-dropdown">
-                        <button type="button" class="nav-trigger" aria-expanded="false" aria-haspopup="true">Shop</button>
-                        <div class="dropdown" role="menu">
-                            <a href="#">All products</a>
-                            <a href="#">Clothing</a>
-                            <a href="#">Accessories</a>
-                            <a href="#">Electronics</a>
-                            <a href="#">Home &amp; living</a>
-                        </div>
-                    </li>
-                    <li class="nav-item has-dropdown">
-                        <button type="button" class="nav-trigger" aria-expanded="false" aria-haspopup="true">New</button>
-                        <div class="dropdown" role="menu">
-                            <a href="#">Just dropped</a>
-                            <a href="#">This week</a>
-                            <a href="#">New collections</a>
-                            <a href="#">Coming soon</a>
-                        </div>
-                    </li>
-                    <li class="nav-item has-dropdown">
-                        <button type="button" class="nav-trigger" aria-expanded="false" aria-haspopup="true">Best Sellers</button>
-                        <div class="dropdown" role="menu">
-                            <a href="#">Top rated</a>
-                            <a href="#">Most purchased</a>
-                            <a href="#">Staff picks</a>
-                            <a href="#">Trending now</a>
-                        </div>
-                    </li>
-                    <li class="nav-item has-dropdown">
-                        <button type="button" class="nav-trigger" aria-expanded="false" aria-haspopup="true">Deals</button>
-                        <div class="dropdown" role="menu">
-                            <a href="#">Clearance</a>
-                            <a href="#">Up to 50% off</a>
-                            <a href="#">Bundle deals</a>
-                            <a href="#">Flash sale</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
+  <!-- Promo Marquee -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>✦ Free Shipping on Orders $50+</span>
+      <span>✦ Use Code AURA20 for 20% Off</span>
+      <span>✦ Cruelty-Free & Clean Beauty</span>
+      <span>✦ New Spring Collection Available</span>
+      <span>✦ Free Shipping on Orders $50+</span>
+      <span>✦ Use Code AURA20 for 20% Off</span>
+      <span>✦ Cruelty-Free & Clean Beauty</span>
+      <span>✦ New Spring Collection Available</span>
+    </div>
+  </div>
 
-            <span class="header-sep" aria-hidden="true">|</span>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="css/logo.jpg" class="logo">Khmer<span>Cosmetics</span></a>
 
-            <form class="search-wrap" role="search" action="#" method="get">
-                <label class="visually-hidden" for="searchInput">Search</label>
-                <input id="searchInput" class="search-input" type="search" name="q" placeholder="Search products…" autocomplete="off" />
-                <button class="search-btn" type="submit" aria-label="Search">🔍</button>
-            </form>
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#home" class="nav__link active">Home</a></li>
+          <li><a href="#products" class="nav__link">Shop</a></li>
+          <li><a href="#categories" class="nav__link">Categories</a></li>
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#orders" class="nav__link">My Orders</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
 
-            <span class="header-sep" aria-hidden="true">|</span>
+      <div class="header__actions">
+        <button class="orders-btn" id="ordersBtn" aria-label="View order history">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path
+              d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+            <line x1="12" y1="22.08" x2="12" y2="12" />
+          </svg>
+          <span class="orders-btn__dot" id="ordersDot"></span>
+        </button>
+        <button class="cart-btn" id="cartBtn" aria-label="Open shopping cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 01-8 0" />
+          </svg>
+          <span class="cart-btn__count" id="cartCount">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-            <div class="header-actions">
-                <button type="button" class="icon-action" aria-label="Wishlist">❤️</button>
-                <button type="button" class="icon-action cart-btn" aria-label="Shopping cart">
-                    🛒<span class="cart-count is-zero" id="cartCount">0</span>
-                </button>
-                <button type="button" class="icon-action" aria-label="Account">👤</button>
+  <!-- Hero Slider -->
+  <section class="hero-slider" id="home">
+    <!-- Slide 1: Original skincare hero -->
+    <div class="hero__slide active" id="slide-skincare">
+      <div class="hero__bg"></div>
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__orb hero__orb--3"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__tag"><span class="hero__tag-dot"></span> New Collection 2026</p>
+          <h1 class="hero__title">Discover Your<br><em>Natural Radiance</em></h1>
+          <p class="hero__text">Luxurious skincare and makeup crafted with clean ingredients for every skin type.</p>
+          <div class="hero__buttons">
+            <a href="#products" class="btn btn--primary">Shop Now</a>
+            <a href="#about" class="btn btn--outline">Our Story</a>
+          </div>
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <strong>50K+</strong>
+              <span>Happy Customers</span>
             </div>
-
-            <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+            <div class="hero__stat">
+              <strong>120+</strong>
+              <span>Products</span>
+            </div>
+            <div class="hero__stat">
+              <strong>4.9★</strong>
+              <span>Average Rating</span>
+            </div>
+          </div>
         </div>
-    </header>
-
-    <main class="page-main">
-        <section class="promo-banner" aria-label="Promotional banners">
-            <div class="promo-viewport">
-                <div class="promo-track">
-                    <figure class="promo-slide">
-                        <img src="https://picsum.photos/seed/shopbanner1/960/400" alt="Spring collection" width="960" height="400" loading="eager" />
-                    </figure>
-                    <figure class="promo-slide">
-                        <img src="https://picsum.photos/seed/shopbanner2/960/400" alt="Member deals" width="960" height="400" loading="lazy" />
-                    </figure>
-                    <figure class="promo-slide">
-                        <img src="https://picsum.photos/seed/shopbanner3/960/400" alt="New arrivals" width="960" height="400" loading="lazy" />
-                    </figure>
-                </div>
+        <div class="hero__visual">
+          <div class="hero__card hero__card--1">
+            <img src="css/header.jpg.jpg" alt="Skincare serum">
+          </div>
+          <div class="hero__card hero__card--2">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&q=80" alt="Makeup collection">
+          </div>
+          <div class="hero__badge">
+            <span class="hero__badge-icon">✦</span>
+            <div>
+              <strong>100%</strong>
+              <span>Natural</span>
             </div>
-            <div class="promo-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-        </section>
-
-        <section class="products-section" aria-labelledby="productsHeading">
-            <div class="section-head">
-                <h1 id="productsHeading">Products</h1>
-                <p class="section-lead">Hover a card to reveal <strong>Add to cart</strong>.</p>
-            </div>
-            <div class="product-grid" id="productGrid">
-                <article class="product-card" data-name="Aurora backpack">
-                    <div class="product-media">
-                        <img src="https://picsum.photos/seed/prod01/600/720" alt="" width="600" height="720" loading="lazy" />
-                        <button type="button" class="add-to-cart">Add to cart</button>
-                    </div>
-                    <h2 class="product-title">Aurora backpack</h2>
-                    <p class="product-price">$89.00</p>
-                </article>
-                <article class="product-card" data-name="Lumen headphones">
-                    <div class="product-media">
-                        <img src="https://picsum.photos/seed/prod02/600/720" alt="" width="600" height="720" loading="lazy" />
-                        <button type="button" class="add-to-cart">Add to cart</button>
-                    </div>
-                    <h2 class="product-title">Lumen headphones</h2>
-                    <p class="product-price">$149.00</p>
-                </article>
-                <article class="product-card" data-name="Vertex watch">
-                    <div class="product-media">
-                        <img src="https://picsum.photos/seed/prod03/600/720" alt="" width="600" height="720" loading="lazy" />
-                        <button type="button" class="add-to-cart">Add to cart</button>
-                    </div>
-                    <h2 class="product-title">Vertex watch</h2>
-                    <p class="product-price">$199.00</p>
-                </article>
-                <article class="product-card" data-name="Nimbus lamp">
-                    <div class="product-media">
-                        <img src="https://picsum.photos/seed/prod04/600/720" alt="" width="600" height="720" loading="lazy" />
-                        <button type="button" class="add-to-cart">Add to cart</button>
-                    </div>
-                    <h2 class="product-title">Nimbus lamp</h2>
-                    <p class="product-price">$64.00</p>
-                </article>
-                <article class="product-card" data-name="Echo speaker">
-                    <div class="product-media">
-                        <img src="https://picsum.photos/seed/prod05/600/720" alt="" width="600" height="720" loading="lazy" />
-                        <button type="button" class="add-to-cart">Add to cart</button>
-                    </div>
-                    <h2 class="product-title">Echo speaker</h2>
-                    <p class="product-price">$119.00</p>
-                </article>
-                <article class="product-card" data-name="Drift bottle">
-                    <div class="product-media">
-                        <img src="https://picsum.photos/seed/prod06/600/720" alt="" width="600" height="720" loading="lazy" />
-                        <button type="button" class="add-to-cart">Add to cart</button>
-                    </div>
-                    <h2 class="product-title">Drift bottle</h2>
-                    <p class="product-price">$32.00</p>
-                </article>
-            </div>
-            <p class="search-empty hidden" id="searchEmpty" role="status">No products match your search.</p>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <div class="footer-col">
-                <a class="footer-logo" href="#">Shoply</a>
-                <p class="footer-about">Quality essentials and curated deals. Shop with confidence.</p>
-            </div>
-            <div class="footer-col">
-                <h3>Contact</h3>
-                <ul class="footer-list">
-                    <li><a href="mailto:hello@shoply.example">hello@shoply.example</a></li>
-                    <li><a href="tel:+15551234567">+1 (555) 123-4567</a></li>
-                    <li>1200 Commerce Ave, Suite 400<br />Austin, TX 78701</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Customer care</h3>
-                <ul class="footer-list">
-                    <li><a href="#">Shipping &amp; returns</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Privacy policy</a></li>
-                    <li><a href="#">Terms of service</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Follow us</h3>
-                <ul class="social-list">
-                    <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
-                    <li><a href="#" rel="noopener noreferrer">Facebook</a></li>
-                    <li><a href="#" rel="noopener noreferrer">X (Twitter)</a></li>
-                    <li><a href="#" rel="noopener noreferrer">YouTube</a></li>
-                </ul>
-            </div>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>© <span id="year"></span> Shoply. All rights reserved.</p>
-        </div>
-    </footer>
+      </div>
+    </div>
 
-    <script src="script.js"></script>
+    <!-- Slide 2: Mora x Diana Animated Banner -->
+    <div class="hero__slide" id="slide-diana">
+      <div class="diana-banner__bg"></div>
+      <div class="diana-orb diana-orb--1"></div>
+      <div class="diana-orb diana-orb--2"></div>
+      
+      <!-- Sparkles particles -->
+      <div class="diana-sparkles">
+        <span class="diana-sparkle" style="top: 15%; left: 25%; animation-delay: 0s;">✦</span>
+        <span class="diana-sparkle" style="top: 40%; left: 15%; animation-delay: 1.5s;">✦</span>
+        <span class="diana-sparkle" style="top: 20%; left: 80%; animation-delay: 0.8s;">✦</span>
+        <span class="diana-sparkle" style="top: 70%; left: 75%; animation-delay: 2.2s;">✦</span>
+        <span class="diana-sparkle" style="top: 85%; left: 20%; animation-delay: 0.5s;">✦</span>
+        <span class="diana-sparkle" style="top: 60%; left: 45%; animation-delay: 1.8s;">✦</span>
+      </div>
+
+      <div class="container hero__inner diana__inner">
+        <div class="hero__content diana__content">
+          <div class="diana-logo-area">
+            <span class="diana-logo-mora">mora</span>
+            <span class="diana-logo-x">×</span>
+            <span class="diana-logo-diana-pill">Diana <span class="diana-logo-wing">✦</span></span>
+          </div>
+          
+          <h1 class="diana-title-main">LẦN ĐẦU TIÊN<br><span class="diana-title-sub">CÓ MẶT TẠI MOIRA.VN</span></h1>
+          
+          <div class="diana-promos">
+            <div class="diana-promo-card">
+              <span class="diana-promo-bracket-left">[</span>
+              <div class="diana-promo-text">
+                <span class="diana-promo-label">VOUCHER</span>
+                <span class="diana-promo-value">150K</span>
+              </div>
+              <span class="diana-promo-bracket-right">]</span>
+            </div>
+            <div class="diana-promo-card">
+              <span class="diana-promo-bracket-left">[</span>
+              <div class="diana-promo-text">
+                <span class="diana-promo-label">MIỄN PHÍ VẬN CHUYỂN</span>
+                <span class="diana-promo-value">TOÀN QUỐC</span>
+              </div>
+              <span class="diana-promo-bracket-right">]</span>
+              <span class="diana-gold-swirl"></span>
+            </div>
+          </div>
+
+          <div class="hero__buttons diana__buttons">
+            <a href="#products" class="btn btn--primary diana-cta-btn">Shop the Campaign</a>
+          </div>
+        </div>
+
+        <div class="diana__visual">
+          <!-- Glassmorphic pedestals -->
+          <div class="diana-pedestals">
+            <div class="diana-pedestal diana-pedestal--1"></div>
+            <div class="diana-pedestal diana-pedestal--2"></div>
+            <div class="diana-pedestal diana-pedestal--3"></div>
+            <div class="diana-pedestal diana-pedestal--4"></div>
+          </div>
+
+          <!-- Product packages -->
+          <div class="diana-products">
+            <div class="diana-product diana-product--1">
+              <img src="assets/diana_sensi.png" alt="Diana Sensi Khô Thoáng">
+              <span class="diana-product-glow"></span>
+            </div>
+            <div class="diana-product diana-product--2">
+              <img src="assets/diana_night_pants.png" alt="Diana Băng Đêm Dạng Quần">
+              <span class="diana-product-glow"></span>
+            </div>
+            <div class="diana-product diana-product--3">
+              <img src="assets/diana_super_absorbent.png" alt="Diana Siêu Thấm">
+              <span class="diana-product-glow"></span>
+            </div>
+            <div class="diana-product diana-product--4">
+              <img src="assets/diana_cool_fresh.png" alt="Diana Sensi Cool Fresh">
+              <span class="diana-product-glow"></span>
+            </div>
+          </div>
+
+          <!-- Floating 3D objects -->
+          <div class="diana-3d-gift-box"></div>
+          <div class="diana-3d-ring diana-3d-ring--1"></div>
+          <div class="diana-3d-ring diana-3d-ring--2"></div>
+          <div class="diana-3d-ring diana-3d-ring--3"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Navigation Arrows -->
+    <button class="hero__arrow hero__arrow--prev" aria-label="Previous slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button class="hero__arrow hero__arrow--next" aria-label="Next slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+    <!-- Pagination Dots -->
+    <div class="hero__dots"></div>
+
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Browse</p>
+        <h2 class="section-title">Shop by Category</h2>
+      </div>
+      <div class="categories__grid">
+        <a href="#products" class="category-card" data-filter="skincare">
+          <div class="category-card__img category-card__img--skincare"></div>
+          <div class="category-card__overlay">
+            <h3>Skincare</h3>
+            <span>24 Products</span>
+          </div>
+        </a>
+        <a href="#products" class="category-card" data-filter="makeup">
+          <div class="category-card__img category-card__img--makeup"></div>
+          <div class="category-card__overlay">
+            <h3>Makeup</h3>
+            <span>18 Products</span>
+          </div>
+        </a>
+        <a href="#products" class="category-card" data-filter="fragrance">
+          <div class="category-card__img category-card__img--fragrance"></div>
+          <div class="category-card__overlay">
+            <h3>Fragrance</h3>
+            <span>12 Products</span>
+          </div>
+        </a>
+        <a href="#products" class="category-card" data-filter="haircare">
+          <div class="category-card__img category-card__img--haircare"></div>
+          <div class="category-card__overlay">
+            <h3>Hair Care</h3>
+            <span>15 Products</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Collection</p>
+        <h2 class="section-title">Featured Products</h2>
+      </div>
+
+      <div class="products__filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="skincare">Skincare</button>
+        <button class="filter-btn" data-filter="makeup">Makeup</button>
+        <button class="filter-btn" data-filter="fragrance">Fragrance</button>
+        <button class="filter-btn" data-filter="haircare">Hair Care</button>
+        <button class="filter-btn" data-filter="diana">Diana Sensi</button>
+      </div>
+
+      <div class="products__grid" id="productsGrid">
+        <!-- Products rendered by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Banner -->
+  <section class="promo">
+    <div class="container promo__inner">
+      <div class="promo__content">
+        <p class="section-tag">Limited Offer</p>
+        <h2>Free Shipping on Orders Over $50</h2>
+        <p>Use code <strong>AURA20</strong> for 20% off your first order.</p>
+        <a href="#products" class="btn btn--primary">Shop the Sale</a>
+      </div>
+      <div class="promo__visual"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container about__inner">
+      <div class="about__content">
+        <p class="section-tag">Our Story</p>
+        <h2 class="section-title">Beauty Rooted in Nature</h2>
+        <p>Founded in 2020, Aura Cosmetics believes that true beauty begins with self-care. Every product is formulated
+          with ethically sourced, cruelty-free ingredients that nourish your skin without compromise.</p>
+        <p>From our signature serums to our bestselling lip colors, we craft each formula with dermatologists and beauty
+          experts to deliver visible results you can trust.</p>
+        <ul class="about__features">
+          <li>
+            <span class="about__icon">✦</span>
+            <div>
+              <strong>100% Cruelty-Free</strong>
+              <p>Never tested on animals</p>
+            </div>
+          </li>
+          <li>
+            <span class="about__icon">✦</span>
+            <div>
+              <strong>Clean Ingredients</strong>
+              <p>No parabens, sulfates, or phthalates</p>
+            </div>
+          </li>
+          <li>
+            <span class="about__icon">✦</span>
+            <div>
+              <strong>Sustainable Packaging</strong>
+              <p>Recyclable and eco-friendly materials</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <p class="section-tag">Reviews</p>
+        <h2 class="section-title">What Our Customers Say</h2>
+      </div>
+      <div class="testimonials__grid">
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p>"The Glow Serum completely transformed my skin. I've never felt more confident without makeup!"</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">S</div>
+            <div>
+              <strong>Sarah M.</strong>
+              <span>Verified Buyer</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p>"Finally found a brand that matches quality with affordability. The Velvet Lip Color is my daily
+            essential."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">J</div>
+            <div>
+              <strong>Jessica L.</strong>
+              <span>Verified Buyer</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p>"Fast shipping, beautiful packaging, and products that actually work. Aura is my go-to beauty brand."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">A</div>
+            <div>
+              <strong>Amira K.</strong>
+              <span>Verified Buyer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order History -->
+  <section class="orders" id="orders">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Your Account</p>
+        <h2 class="section-title">Order History</h2>
+      </div>
+      <div class="orders__list" id="ordersList">
+        <div class="orders-empty" id="ordersEmpty">
+          <div class="orders-empty__icon">📦</div>
+          <h3>No orders yet</h3>
+          <p>When you place an order, it will appear here with live delivery tracking.</p>
+          <a href="#products" class="btn btn--primary">Start Shopping</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Newsletter -->
+  <section class="contact" id="contact">
+    <div class="container contact__inner">
+      <div class="contact__info">
+        <p class="section-tag">Stay Connected</p>
+        <h2 class="section-title">Join the Aura Family</h2>
+        <p>Subscribe for exclusive offers, beauty tips, and early access to new collections.</p>
+        <div class="contact__details">
+          <div class="contact__item">
+            <strong>Email</strong>
+            <a href="mailto:hello@khmercosmetics.com">hello@khmercosmetics.com</a>
+          </div>
+          <div class="contact__item">
+            <strong>Phone</strong>
+            <a href="tel:+15551234567">+1 (555) 123-4567</a>
+          </div>
+          <div class="contact__item">
+            <strong>Follow Us</strong>
+            <div class="social-links">
+              <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+              <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+              <a href="https://pinterest.com" target="_blank" rel="noopener" aria-label="Pinterest">PI</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact__form" id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+          <span class="form-error" id="nameError"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" required>
+          <span class="form-error" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
+          <span class="form-error" id="messageError"></span>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+        <p class="form-success" id="formSuccess"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="logo.jpg" class="logo">Khmer<span>Cosmetics</span></a>
+        <p>Elevating your beauty routine with clean, luxurious products since 2020.</p>
+      </div>
+      <div class="footer__links">
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#products">All Products</a></li>
+            <li><a href="#products" data-filter="skincare">Skincare</a></li>
+            <li><a href="#products" data-filter="makeup">Makeup</a></li>
+            <li><a href="#products" data-filter="fragrance">Fragrance</a></li>
+            <li><a href="#products" data-filter="diana">Diana Sensi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#orders">My Orders</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 Aura Cosmetics. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Checkout Modal -->
+  <div class="checkout-overlay" id="checkoutOverlay"></div>
+  <div class="checkout-modal" id="checkoutModal">
+    <div class="checkout-modal__header">
+      <h2>Secure Checkout</h2>
+      <button class="checkout-close" id="checkoutClose" aria-label="Close checkout">&times;</button>
+    </div>
+
+    <div class="checkout-steps">
+      <div class="checkout-step active" data-step="1">
+        <span class="checkout-step__num">1</span>
+        <span class="checkout-step__label">Contact</span>
+      </div>
+      <div class="checkout-step__line"></div>
+      <div class="checkout-step" data-step="2">
+        <span class="checkout-step__num">2</span>
+        <span class="checkout-step__label">Address</span>
+      </div>
+      <div class="checkout-step__line"></div>
+      <div class="checkout-step" data-step="3">
+        <span class="checkout-step__num">3</span>
+        <span class="checkout-step__label">Payment</span>
+      </div>
+      <div class="checkout-step__line"></div>
+      <div class="checkout-step" data-step="4">
+        <span class="checkout-step__num">4</span>
+        <span class="checkout-step__label">Confirm</span>
+      </div>
+    </div>
+
+    <div class="checkout-body">
+      <div class="checkout-form-area">
+        <!-- Step 1: Contact -->
+        <form class="checkout-panel active" id="checkoutStep1" data-panel="1">
+          <h3>Contact Information</h3>
+          <p class="checkout-panel__desc">We'll use this to send your order confirmation.</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="checkoutFirstName">First Name</label>
+              <input type="text" id="checkoutFirstName" placeholder="Jane" required>
+              <span class="form-error" id="checkoutFirstNameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="checkoutLastName">Last Name</label>
+              <input type="text" id="checkoutLastName" placeholder="Doe" required>
+              <span class="form-error" id="checkoutLastNameError"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="checkoutEmail">Email Address</label>
+            <input type="email" id="checkoutEmail" placeholder="jane@email.com" required>
+            <span class="form-error" id="checkoutEmailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="checkoutPhone">Phone Number</label>
+            <input type="tel" id="checkoutPhone" placeholder="+1 (555) 123-4567" required>
+            <span class="form-error" id="checkoutPhoneError"></span>
+          </div>
+          <button type="button" class="btn btn--primary btn--full checkout-next" data-next="2">Continue to
+            Address</button>
+        </form>
+
+        <!-- Step 2: Address -->
+        <form class="checkout-panel" id="checkoutStep2" data-panel="2">
+          <h3>Shipping Address</h3>
+          <p class="checkout-panel__desc">Where should we deliver your beauty essentials?</p>
+          <div class="form-group">
+            <label for="checkoutStreet">Street Address</label>
+            <input type="text" id="checkoutStreet" placeholder="123 Beauty Lane" required>
+            <span class="form-error" id="checkoutStreetError"></span>
+          </div>
+          <div class="form-group">
+            <label for="checkoutApt">Apartment, Suite (Optional)</label>
+            <input type="text" id="checkoutApt" placeholder="Apt 4B">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="checkoutCity">City</label>
+              <input type="text" id="checkoutCity" placeholder="New York" required>
+              <span class="form-error" id="checkoutCityError"></span>
+            </div>
+            <div class="form-group">
+              <label for="checkoutState">State / Province</label>
+              <input type="text" id="checkoutState" placeholder="NY" required>
+              <span class="form-error" id="checkoutStateError"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="checkoutZip">ZIP / Postal Code</label>
+              <input type="text" id="checkoutZip" placeholder="10001" required>
+              <span class="form-error" id="checkoutZipError"></span>
+            </div>
+            <div class="form-group">
+              <label for="checkoutCountry">Country</label>
+              <select id="checkoutCountry" required>
+                <option value="">Select country</option>
+                <option value="US" selected>United States</option>
+                <option value="CA">Canada</option>
+                <option value="UK">United Kingdom</option>
+                <option value="AU">Australia</option>
+                <option value="FR">France</option>
+                <option value="DE">Germany</option>
+              </select>
+              <span class="form-error" id="checkoutCountryError"></span>
+            </div>
+          </div>
+          <div class="checkout-actions">
+            <button type="button" class="btn btn--outline checkout-back" data-back="1">Back</button>
+            <button type="button" class="btn btn--primary checkout-next" data-next="3">Continue to Payment</button>
+          </div>
+        </form>
+
+        <!-- Step 3: Payment -->
+        <form class="checkout-panel" id="checkoutStep3" data-panel="3">
+          <h3>Payment Method</h3>
+          <p class="checkout-panel__desc">All transactions are secure and encrypted.</p>
+
+          <div class="payment-methods">
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="card" checked>
+              <span class="payment-option__box">
+                <span class="payment-option__icon">💳</span>
+                <span>Credit / Debit Card</span>
+              </span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="paypal">
+              <span class="payment-option__box">
+                <span class="payment-option__icon">🅿️</span>
+                <span>PayPal</span>
+              </span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="apple">
+              <span class="payment-option__box">
+                <span class="payment-option__icon">🍎</span>
+                <span>Apple Pay</span>
+              </span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="cod">
+              <span class="payment-option__box">
+                <span class="payment-option__icon">📦</span>
+                <span>Cash on Delivery</span>
+              </span>
+            </label>
+          </div>
+
+          <div class="card-fields" id="cardFields">
+            <div class="form-group">
+              <label for="checkoutCardName">Name on Card</label>
+              <input type="text" id="checkoutCardName" placeholder="Jane Doe">
+              <span class="form-error" id="checkoutCardNameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="checkoutCardNumber">Card Number</label>
+              <input type="text" id="checkoutCardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+              <span class="form-error" id="checkoutCardNumberError"></span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="checkoutExpiry">Expiry Date</label>
+                <input type="text" id="checkoutExpiry" placeholder="MM/YY" maxlength="5">
+                <span class="form-error" id="checkoutExpiryError"></span>
+              </div>
+              <div class="form-group">
+                <label for="checkoutCvv">CVV</label>
+                <input type="text" id="checkoutCvv" placeholder="123" maxlength="4">
+                <span class="form-error" id="checkoutCvvError"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkout-actions">
+            <button type="button" class="btn btn--outline checkout-back" data-back="2">Back</button>
+            <button type="button" class="btn btn--primary checkout-next" data-next="4">Review Order</button>
+          </div>
+        </form>
+
+        <!-- Step 4: Confirmation -->
+        <div class="checkout-panel" id="checkoutStep4" data-panel="4">
+          <h3>Order Summary</h3>
+          <p class="checkout-panel__desc">Please review your details before placing the order.</p>
+          <div class="order-review" id="orderReview"></div>
+          <div class="checkout-actions">
+            <button type="button" class="btn btn--outline checkout-back" data-back="3">Back</button>
+            <button type="button" class="btn btn--primary btn--glow" id="placeOrderBtn">Place Order</button>
+          </div>
+        </div>
+
+        <!-- Success -->
+        <div class="checkout-panel" id="checkoutSuccess" data-panel="5">
+          <div class="checkout-success">
+            <div class="checkout-success__icon">✓</div>
+            <h3>Order Placed Successfully!</h3>
+            <p>Thank you for shopping with Aura Cosmetics. A confirmation email has been sent to your inbox.</p>
+            <p class="checkout-success__order">Order ID: <strong id="orderId"></strong></p>
+            <button type="button" class="btn btn--primary" id="checkoutDoneBtn">Continue Shopping</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="checkout-summary">
+        <h4>Your Order</h4>
+        <div class="checkout-summary__items" id="checkoutSummaryItems"></div>
+        <div class="checkout-summary__row">
+          <span>Subtotal</span>
+          <span id="checkoutSubtotal">$0.00</span>
+        </div>
+        <div class="checkout-summary__row">
+          <span>Shipping</span>
+          <span id="checkoutShipping">Free</span>
+        </div>
+        <div class="checkout-summary__row checkout-summary__row--total">
+          <span>Total</span>
+          <span id="checkoutGrandTotal">$0.00</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar__header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-sidebar__items" id="cartItems">
+      <p class="cart-empty">Your cart is empty</p>
+    </div>
+    <div class="cart-sidebar__footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="btn btn--primary btn--full" id="checkoutBtn">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Order Tracking Modal -->
+  <div class="tracking-overlay" id="trackingOverlay"></div>
+  <div class="tracking-modal" id="trackingModal">
+    <div class="tracking-modal__header">
+      <div>
+        <h3>Track Your Order</h3>
+        <p class="tracking-modal__id" id="trackingOrderId"></p>
+      </div>
+      <button class="tracking-close" id="trackingClose" aria-label="Close tracking">&times;</button>
+    </div>
+    <div class="tracking-modal__body" id="trackingBody">
+      <!-- Rendered by JavaScript -->
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 
 </html>
